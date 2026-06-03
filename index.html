@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Plant Manager - Energy Control Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ Power Plant Manager</h1>
+            <p>Manage your building's electrical system wisely</p>
+        </header>
+
+        <div class="game-wrapper">
+            <!-- Stats Panel -->
+            <div class="stats-panel">
+                <div class="stat">
+                    <span class="label">Available Power:</span>
+                    <span class="value" id="availablePower">100</span> / 100 MW
+                </div>
+                <div class="stat">
+                    <span class="label">Power Used:</span>
+                    <span class="value" id="powerUsed">0</span> / 100 MW
+                </div>
+                <div class="stat">
+                    <span class="label">Blackout Risk:</span>
+                    <span class="value" id="blackoutRisk" style="color: #4ade80;">Safe</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Score:</span>
+                    <span class="value" id="score">0</span>
+                </div>
+            </div>
+
+            <!-- Game Board -->
+            <div class="game-board">
+                <div class="zones-container" id="zonesContainer">
+                    <!-- Zones will be dynamically generated -->
+                </div>
+            </div>
+
+            <!-- Objectives Panel -->
+            <div class="objectives-panel">
+                <h3>Current Objectives</h3>
+                <div id="objectivesList" class="objectives-list">
+                    <!-- Objectives will be dynamically generated -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="controls">
+            <button id="resetBtn" class="btn btn-secondary">Reset Game</button>
+            <button id="nextLevelBtn" class="btn btn-primary" disabled>Next Level</button>
+        </div>
+
+        <!-- Game Over / Win Modal -->
+        <div id="gameModal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="modalTitle">Game Over!</h2>
+                <p id="modalMessage"></p>
+                <button id="modalBtn" class="btn btn-primary">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
