@@ -33,6 +33,11 @@ header p {
     color: #e0e0e0;
 }
 
+#headerInfo {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
 .game-wrapper {
     display: grid;
     grid-template-columns: 250px 1fr 250px;
@@ -116,6 +121,11 @@ header p {
     animation: pulse-red 0.5s infinite;
 }
 
+.zone.premium {
+    border-color: #ffa500;
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.2) 0%, rgba(255, 140, 0, 0.2) 100%);
+}
+
 @keyframes pulse-red {
     0%, 100% { box-shadow: 0 0 10px rgba(255, 68, 68, 0.5); }
     50% { box-shadow: 0 0 20px rgba(255, 68, 68, 0.8); }
@@ -171,8 +181,13 @@ header p {
     color: #fff;
 }
 
-.switch-btn:hover {
+.switch-btn:hover:not(:disabled) {
     transform: scale(1.05);
+}
+
+.switch-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* Objectives Panel */
@@ -218,6 +233,7 @@ header p {
     justify-content: center;
     gap: 20px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -283,6 +299,7 @@ header p {
     padding: 40px;
     text-align: center;
     max-width: 400px;
+    width: 90%;
 }
 
 .modal-content h2 {
@@ -295,6 +312,7 @@ header p {
     font-size: 1.1em;
     margin-bottom: 30px;
     color: #e0e0e0;
+    line-height: 1.6;
 }
 
 /* Responsive */
@@ -317,6 +335,10 @@ header p {
         padding: 10px 20px;
         font-size: 0.9em;
     }
+
+    .controls {
+        gap: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -330,5 +352,14 @@ header p {
 
     .stats-panel, .objectives-panel {
         grid-column: 1 / -1;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.85em;
     }
 }
