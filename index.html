@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power Plant Manager - Energy Control Game</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="subscription.css">
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>⚡ Power Plant Manager</h1>
             <p>Manage your building's electrical system wisely</p>
+            <div id="headerInfo"></div>
         </header>
 
         <div class="game-wrapper">
@@ -50,10 +53,25 @@
             </div>
         </div>
 
+        <!-- Power-ups Section (Premium Only) -->
+        <div id="powerUpsContainer" style="display:none; margin-top: 20px;">
+            <!-- Power-ups will be dynamically generated -->
+        </div>
+
         <!-- Control Buttons -->
         <div class="controls">
             <button id="resetBtn" class="btn btn-secondary">Reset Game</button>
             <button id="nextLevelBtn" class="btn btn-primary" disabled>Next Level</button>
+            <button id="plansBtn" class="btn btn-secondary">💳 Upgrade</button>
+        </div>
+
+        <!-- Subscription Plans Section -->
+        <div class="subscription-section" id="plansSection" style="display:none;">
+            <h2>Choose Your Plan</h2>
+            <p>Unlock premium features and enjoy a better gaming experience</p>
+            <div class="plans-grid" id="plansGrid">
+                <!-- Plans will be dynamically generated -->
+            </div>
         </div>
 
         <!-- Game Over / Win Modal -->
@@ -66,6 +84,8 @@
         </div>
     </div>
 
-    <script src="game.js"></script>
+    <!-- Scripts -->
+    <script src="payment.js"></script>
+    <script src="premium-features.js"></script>
 </body>
 </html>
